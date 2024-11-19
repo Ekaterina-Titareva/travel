@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "KievitPro-Bold";
+  src: url(./src/assets/fonts/KievitPro-Bold.woff2) format("woff2"),
+      url(./src/assets/fonts/KievitPro-Bold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "KievitPro-Light";
+  src: url(./src/assets/fonts/KievitPro-Light.woff2) format("woff2"),
+      url(./src/assets/fonts/KievitPro-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "KievitPro-Regular";
+  src: url(./src/assets/fonts/KievitPro-Regular.woff2) format("woff2"),
+      url(./src/assets/fonts/KievitPro-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(./src/assets/fonts/Roboto-Regular.woff2) format("woff2"),
+      url(./src/assets/fonts/Roboto-Regular.woff) format("woff");
+}
+
+$font-main : 'KievitPro-Regular', sans-serif;
+$font-title : 'KievitPro-Bold', sans-serif;
+$font-about-text : 'KievitPro-Light', sans-serif;
+$font-review-text : 'Roboto', sans-serif;
+$font-date-text : 'Roboto', sans-serif;
+$font-input-placeholder : 'KievitPro-Light', sans-serif;
+
+$background-main: #F9F7F2;
+$background-secondary: #FFFFFF;
+$background-overlay: #101010ca;
+
+$text-primary: #000000;
+$text-secondary: #FFFFFF;
+
+$accent-primary: #FF4641;
+$accent-secondary: #FC4F1E;
+
+$grey-primary: #9D9D9D;
+$grey-secondary: #212121;
+
+$border: 1px solid #ECECEC;
+
+
+
+@mixin font($fs, $fw, $lh, $ls) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  letter-spacing: $ls;
+}
+
+%title-txt {
+  @include font($fs: 27px, $fw: 700, $lh: 35px, $ls: .3px);
+}
+
+
+* {
+  box-sizing: border-box;
+  font-family: $font-main;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smooRegularg: antialiased;
+  -moz-osx-font-smooRegularg: grayscale;
+  background-color: $background-main;
+  padding: 40px 0;
+  @media  (max-width: 768px) {
+    padding: 0;
+}
+}
+
+.root {
+  margin: 0 auto;
+  max-width: 879px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+li,
+ol,
+ul {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-title;
+  @extend %title-txt;
+}
+
+input,
+button {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: $text-primary;
+}
